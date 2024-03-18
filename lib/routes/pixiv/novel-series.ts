@@ -6,6 +6,7 @@ import { getToken } from './token';
 import getNovelSeries from './api/get-novel-series';
 import getNovelContent from './api/get-novel-content';
 
+const baseUrl = 'https://www.pixiv.net';
 const novelTextRe = /"text":"(.+?[^\\])"/;
 
 export const route: Route = {
@@ -53,13 +54,21 @@ async function handler(ctx) {
         novelSeriesResponse = await getNovelSeries(id, contentCount - limit, token);
     }
 
-    const novels = novelSeriesResponse.data.novels.reverse().map((novel) => ({
-        novelId: novel.id,
-        title: novel.title,
-        author: novel.user.name,
-        pubDate: parseDate(novel.create_date),
-        link: `https://www.pixiv.net/novel/show.php?id=${novel.id}`,
-    }));
+    const novels = novelSeriesResponse.data.novels.reverse().map((novel) => {
+        const tags = novel.tags.map((tag) => `<a href="${baseUrl}/tags/${tag.name}/novels">#${tag.name}</a>`).join('<span>&nbsp;&nbsp;</span>');
+        const item = {
+            novelId: novel.id,
+            novelCaption: tags,
+            title: novel.title,
+            author: novel.user.name,
+            pubDate: parseDate(novel.create_date),
+            link: `https://www.pixiv.net/novel/show.php?id=${novel.id}`,
+        };
+        if (novel.caption) {
+            item.novelCaption = `${novel.caption}<br><br>${tags}`;
+        }
+        return item;
+    });
 
     let langDivLeft = '';
     let langDivRight = '';
@@ -73,7 +82,7 @@ async function handler(ctx) {
             cache.tryGet(novel.link, async () => {
                 const content = await getNovelContent(novel.novelId, token);
                 const rawText = novelTextRe.exec(content.data)[1];
-                novel.description = `${langDivLeft}<p>${unescape(rawText.replaceAll('\\u', '%u'))}</p>${langDivRight}`
+                novel.description = `${langDivLeft}<blockquote>${novel.novelCaption}</blockquote><p>${unescape(rawText.replaceAll('\\u', '%u'))}</p>${langDivRight}`
                     .replaceAll('\\n', '</p><p>')
                     .replaceAll('\\t', '\t')
                     .replaceAll('\\', '')

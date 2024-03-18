@@ -55,13 +55,19 @@ async function handler(ctx) {
         if (novel.series.id) {
             title = `${novel.series.title} - ${novel.title}`;
         }
-        return {
+        const tags = novel.tags.map((tag) => `<a href="${baseUrl}/tags/${tag.name}/novels">#${tag.name}</a>`).join('<span>&nbsp;&nbsp;</span>');
+        const item = {
             novelId: novel.id,
+            novelCaption: tags,
             title,
             author: username,
             pubDate: parseDate(novel.create_date),
             link: `https://www.pixiv.net/novel/show.php?id=${novel.id}`,
         };
+        if (novel.caption) {
+            item.novelCaption = `${novel.caption}<br><br>${tags}`;
+        }
+        return item;
     });
 
     let langDivLeft = '';
@@ -76,7 +82,7 @@ async function handler(ctx) {
             cache.tryGet(novel.link, async () => {
                 const content = await getNovelContent(novel.novelId, token);
                 const rawText = novelTextRe.exec(content.data)[1];
-                novel.description = `${langDivLeft}<p>${unescape(rawText.replaceAll('\\u', '%u'))}</p>${langDivRight}`
+                novel.description = `${langDivLeft}<blockquote>${novel.novelCaption}</blockquote><p>${unescape(rawText.replaceAll('\\u', '%u'))}</p>${langDivRight}`
                     .replaceAll('\\n', '</p><p>')
                     .replaceAll('\\t', '\t')
                     .replaceAll('\\', '')
