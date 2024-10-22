@@ -1,4 +1,4 @@
-import { Route } from '@/types';
+import { Route, ViewType } from '@/types';
 import { getCurrentPath } from '@/utils/helpers';
 const __dirname = getCurrentPath(import.meta.url);
 
@@ -6,11 +6,12 @@ import cache from '@/utils/cache';
 import { parseDate } from '@/utils/parse-date';
 import { resolveHandle, getProfile, getAuthorFeed } from './utils';
 import { art } from '@/utils/render';
-import * as path from 'node:path';
+import path from 'node:path';
 
 export const route: Route = {
     path: '/profile/:handle',
-    categories: ['social-media'],
+    categories: ['social-media', 'popular'],
+    view: ViewType.SocialMedia,
     example: '/bsky/profile/bsky.app',
     parameters: { handle: 'User handle, can be found in URL' },
     features: {
@@ -52,6 +53,12 @@ async function handler(ctx) {
         comments: post.replyCount,
     }));
 
+    ctx.set('json', {
+        DID,
+        profile,
+        authorFeed,
+    });
+
     return {
         title: `${profile.displayName} (@${profile.handle}) — Bluesky`,
         description: profile.description?.replaceAll('\n', ' '),
@@ -61,10 +68,4 @@ async function handler(ctx) {
         logo: profile.avatar,
         item: items,
     };
-
-    ctx.set('json', {
-        DID,
-        profile,
-        authorFeed,
-    });
 }

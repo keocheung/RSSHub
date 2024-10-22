@@ -1,9 +1,15 @@
-import { Route } from '@/types';
+import { Route, ViewType } from '@/types';
 import got from '@/utils/got';
 
 export const route: Route = {
-    path: ['/bangumi/:seasonid', '/bangumi/media/:mediaid'],
-    name: 'Unknown',
+    path: '/bangumi/media/:mediaid',
+    name: '番剧',
+    parameters: {
+        mediaid: '番剧媒体 id, 番剧主页 URL 中获取',
+    },
+    example: '/bilibili/bangumi/media/9192',
+    categories: ['social-media', 'popular'],
+    view: ViewType.Videos,
     maintainers: ['DIYgod'],
     handler,
 };
