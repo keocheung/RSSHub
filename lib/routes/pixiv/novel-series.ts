@@ -1,19 +1,18 @@
 import { Route } from '@/types';
-import got from '@/utils/got';
 import { parseDate } from '@/utils/parse-date';
 import { config } from '@/config';
 import cache from '@/utils/cache';
 import { getToken } from './token';
-import getUserNovels from './api/get-user-novels';
+import getNovelSeries from './api/get-novel-series';
 import getNovelContent from './api/get-novel-content';
 
 const baseUrl = 'https://www.pixiv.net';
 const novelTextRe = /"text":"(.+?[^\\])"/;
 
 export const route: Route = {
-    path: '/user/novels/:id/:lang?',
+    path: '/novel/series/:id/:lang?',
     categories: ['social-media'],
-    example: '/pixiv/user/novels/27104704',
+    example: '/pixiv/user/novels/1394738',
     parameters: {
         id: "Novel series id, available in novel series' homepage URL",
         lang: 'IETF BCP 47 language tag that helps RSS readers choose the right font',
@@ -26,41 +25,42 @@ export const route: Route = {
         supportPodcast: false,
         supportScihub: false,
     },
-    radar: [
-        {
-            source: ['www.pixiv.net/users/:id/novels'],
-        },
-    ],
-    name: 'User Novels',
-    maintainers: ['TonyRL'],
+    radar: {
+        source: ['www.pixiv.net/novel/series/:id'],
+    },
+    name: 'Novel Series',
+    maintainers: ['keocheung'],
     handler,
 };
 
 async function handler(ctx) {
     if (!config.pixiv || !config.pixiv.refreshToken) {
-        return handleWeb(ctx);
+        throw new Error('pixiv RSS is disabled due to the lack of <a href="https://docs.rsshub.app/install/#pei-zhi-bu-fen-rss-mo-kuai-pei-zhi">relevant config</a>');
     }
 
     const id = ctx.req.param('id');
-    const limit = Number.parseInt(ctx.req.query('limit')) || 10;
+    let limit = Number.parseInt(ctx.req.query('limit')) || 10;
+    if (limit > 30) {
+        limit = 30;
+    }
     const token = await getToken(cache.tryGet);
     if (!token) {
         throw new Error('pixiv not login');
     }
 
-    const userNovelsResponse = await getUserNovels(id, token);
-    const username = userNovelsResponse.data.user.name;
-    const novels = userNovelsResponse.data.novels.slice(0, limit).map((novel) => {
-        let title = novel.title;
-        if (novel.series.id) {
-            title = `${novel.series.title} - ${novel.title}`;
-        }
+    let novelSeriesResponse = await getNovelSeries(id, 0, token);
+    const contentCount = Number.parseInt(novelSeriesResponse.data.novel_series_detail.content_count);
+    if (contentCount > limit) {
+        novelSeriesResponse = await getNovelSeries(id, contentCount - limit, token);
+    }
+
+    const novels = novelSeriesResponse.data.novels.reverse().map((novel) => {
         const tags = novel.tags.map((tag) => `<a href="${baseUrl}/tags/${tag.name}/novels">#${tag.name}</a>`).join('<span>&nbsp;&nbsp;</span>');
         const item = {
             novelId: novel.id,
             novelCaption: tags,
-            title,
-            author: username,
+            title: novel.title,
+            author: novel.user.name,
             pubDate: parseDate(novel.create_date),
             link: `https://www.pixiv.net/novel/show.php?id=${novel.id}`,
         };
@@ -94,53 +94,9 @@ async function handler(ctx) {
     );
 
     return {
-        title: `${username}'s Novels`,
-        link: `https://www.pixiv.net/users/${id}/novels`,
-        description: `${username}'s Novels`,
-        item: items,
-    };
-}
-
-async function handleWeb(ctx) {
-    const id = ctx.req.param('id');
-    const { limit = 100 } = ctx.req.query();
-    const url = `${baseUrl}/users/${id}/novels`;
-    const { data: allData } = await got(`${baseUrl}/ajax/user/${id}/profile/all`, {
-        headers: {
-            referer: url,
-        },
-    });
-
-    const novels = Object.keys(allData.body.novels)
-        .sort((a, b) => b - a)
-        .slice(0, Number.parseInt(limit, 10));
-    const searchParams = new URLSearchParams();
-    for (const novel of novels) {
-        searchParams.append('ids[]', novel);
-    }
-
-    const { data } = await got(`${baseUrl}/ajax/user/${id}/profile/novels`, {
-        headers: {
-            referer: url,
-        },
-        searchParams,
-    });
-
-    const items = Object.values(data.body.works).map((item) => ({
-        title: item.seriesTitle || item.title,
-        description: item.description || item.title,
-        link: `${baseUrl}/novel/series/${item.id}`,
-        author: item.userName,
-        pubDate: parseDate(item.createDate),
-        updated: parseDate(item.updateDate),
-        category: item.tags,
-    }));
-
-    return {
-        title: data.body.extraData.meta.title,
-        description: data.body.extraData.meta.ogp.description,
-        image: Object.values(data.body.works)[0].profileImageUrl,
-        link: url,
+        title: novelSeriesResponse.data.novel_series_detail.title,
+        link: `https://www.pixiv.net/novel/series/${id}`,
+        description: novelSeriesResponse.data.novel_series_detail.caption,
         item: items,
     };
 }
