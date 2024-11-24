@@ -13,6 +13,7 @@ import header from '@/middleware/header';
 import antiHotlink from '@/middleware/anti-hotlink';
 import parameter from '@/middleware/parameter';
 import trace from '@/middleware/trace';
+import articleLanguage from '@/middleware/article-language';
 import { jsxRenderer } from 'hono/jsx-renderer';
 import { trimTrailingSlash } from 'hono/trailing-slash';
 
@@ -47,6 +48,7 @@ app.use(header);
 app.use(antiHotlink);
 app.use(parameter);
 app.use(cache);
+app.use(articleLanguage);
 
 app.route('/', registry);
 app.route('/api', api);

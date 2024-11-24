@@ -11,6 +11,7 @@ import { MiddlewareHandler } from 'hono';
 import cache from '@/utils/cache';
 import Parser from '@postlight/parser';
 import { Data, DataItem } from '@/types';
+import logger from '@/utils/logger';
 
 const md = markdownit({
     html: true,
@@ -386,6 +387,23 @@ const middleware: MiddlewareHandler = async (ctx, next) => {
                 item.link = item.doi ? `${config.scihub.host}${item.doi}` : `${config.scihub.host}${item.link}`;
                 return item;
             });
+        }
+
+        // language
+        let lang = ctx.req.query('lang');
+        if (lang) {
+            if (lang === 'auto' && data.language) {
+                lang = data.language;
+            }
+            try {
+                new Intl.Locale(lang);
+                data.item.map((item) => {
+                    item.description = `<div lang="${lang}">${item.description}</div>`;
+                    return item;
+                });
+            } catch {
+                logger.warn(`param lang is invalid`);
+            }
         }
 
         // opencc

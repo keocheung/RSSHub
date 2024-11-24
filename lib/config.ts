@@ -86,6 +86,7 @@ export type Config = {
         promptTitle: string;
         promptDescription: string;
     };
+    autoArticleLanguage: boolean;
 
     // Route-specific Configurations
     bilibili: {
@@ -506,6 +507,7 @@ const calculateValue = () => {
             promptDescription: envs.OPENAI_PROMPT || 'Please summarize the following article and reply with markdown format.',
             promptTitle: envs.OPENAI_PROMPT_TITLE || 'Please translate the following title into Simplified Chinese and reply only translated text.',
         },
+        autoArticleLanguage: toBoolean(envs.AUTO_ARTICLE_LANGUAGE, false),
 
         // Route-specific Configurations
         bilibili: {
