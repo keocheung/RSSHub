@@ -1489,7 +1489,7 @@
   },
   "aeon.co": {
     "_name": "AEON",
-    "aeon": [
+    ".": [
       {
         "title": "Categories",
         "docs": "https://docs.rsshub.app/routes/new-media",
@@ -1556,14 +1556,6 @@
     "_name": "电獭少女",
     "agirls": [
       {
-        "title": "分类",
-        "docs": "https://docs.rsshub.app/routes/new-media",
-        "source": [
-          "/posts/:category"
-        ],
-        "target": "/agirls/:category"
-      },
-      {
         "title": "当前精选主题列表",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
@@ -1579,6 +1571,14 @@
           "/topic/:topic"
         ],
         "target": "/agirls/topic/:topic"
+      },
+      {
+        "title": "分类",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/posts/:category"
+        ],
+        "target": "/agirls/:category"
       }
     ]
   },
@@ -3009,6 +3009,139 @@
       }
     ]
   },
+  "ali213.net": {
+    "_name": "游侠网",
+    "www": [
+      {
+        "title": "资讯",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/news/:category"
+        ],
+        "target": "/ali213params=>{const category=params.category;return`/news/${category?`/${category}`:\"\"}`}"
+      },
+      {
+        "title": "最新资讯",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/news/new"
+        ],
+        "target": "/ali213/news/new"
+      },
+      {
+        "title": "评测",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/news/pingce"
+        ],
+        "target": "/ali213/news/pingce"
+      },
+      {
+        "title": "游戏",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/news/game"
+        ],
+        "target": "/ali213/news/game"
+      },
+      {
+        "title": "动漫",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/news/comic"
+        ],
+        "target": "/ali213/news/comic"
+      },
+      {
+        "title": "影视",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/news/movie"
+        ],
+        "target": "/ali213/news/movie"
+      },
+      {
+        "title": "科技",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/news/tech"
+        ],
+        "target": "/ali213/news/tech"
+      },
+      {
+        "title": "电竞",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/news/esports"
+        ],
+        "target": "/ali213/news/esports"
+      },
+      {
+        "title": "娱乐",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/news/amuse"
+        ],
+        "target": "/ali213/news/amuse"
+      },
+      {
+        "title": "手游",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/news/mobile"
+        ],
+        "target": "/ali213/news/mobile"
+      },
+      {
+        "title": "大侠号",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/news/zl/:category"
+        ],
+        "target": "/ali213params=>{const category=params.category;return`/ali213/zl${category?`/${category}`:\"\"}`}"
+      },
+      {
+        "title": "首页",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/news/zl/"
+        ],
+        "target": "/ali213/zl"
+      },
+      {
+        "title": "游戏",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/news/zl/game/"
+        ],
+        "target": "/ali213/zl/game"
+      },
+      {
+        "title": "动漫",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/news/zl/comic/"
+        ],
+        "target": "/ali213/zl/comic"
+      },
+      {
+        "title": "影视",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/news/zl/movie/"
+        ],
+        "target": "/ali213/zl/movie"
+      },
+      {
+        "title": "娱乐",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/news/zl/amuse/"
+        ],
+        "target": "/ali213/zl/amuse"
+      }
+    ]
+  },
   "alicesoft.com": {
     "_name": "ALICESOFT",
     "www": [
@@ -3135,6 +3268,19 @@
       }
     ]
   },
+  "amz123.com": {
+    "_name": "Amz123",
+    ".": [
+      {
+        "title": "AMZ123 快讯",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/kx"
+        ],
+        "target": "/amz123/kx"
+      }
+    ]
+  },
   "android.com": {
     "_name": "Android",
     "developer": [
@@ -3173,6 +3319,19 @@
           "/"
         ],
         "target": "/annualreviews/:id"
+      }
+    ]
+  },
+  "anthropic.com": {
+    "_name": "Anthropic",
+    ".": [
+      {
+        "title": "News",
+        "docs": "https://docs.rsshub.app/routes/programming",
+        "source": [
+          "/"
+        ],
+        "target": "/anthropic/news"
       }
     ]
   },
@@ -3271,9 +3430,9 @@
         "title": "播客",
         "docs": "https://docs.rsshub.app/routes/multimedia",
         "source": [
-          "/cn/podcast/:id"
+          "/:region/podcast/:id"
         ],
-        "target": "/apple/podcast/:id"
+        "target": "/apple/podcast/:id/:region?"
       }
     ]
   },
@@ -3941,6 +4100,7 @@
         "title": "热搜",
         "docs": "https://docs.rsshub.app/routes/social-media",
         "source": [
+          "/",
           "/"
         ],
         "target": "/bilibili/hot-search"
@@ -6235,6 +6395,443 @@
       }
     ]
   },
+  "chinacdc.cn": {
+    "_name": "中国疾病预防控制中心",
+    "www": [
+      {
+        "title": "通用",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/:category"
+        ],
+        "target": "/chinacdcparams=>{const category=params.category;return`/chinacdc${category?`/${category}`:\"\"}`}"
+      },
+      {
+        "title": "中心要闻",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/zxyw/"
+        ],
+        "target": "/chinacdc/zxyw"
+      },
+      {
+        "title": "通知公告",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/tzgg/"
+        ],
+        "target": "/chinacdc/tzgg"
+      },
+      {
+        "title": "党建园地 - 廉政文化",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/djgz_13611/"
+        ],
+        "target": "/chinacdc/dqgz/djgz_13611"
+      },
+      {
+        "title": "党建园地 - 党建工作",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/dqgz/"
+        ],
+        "target": "/chinacdc/dqgz/djgz"
+      },
+      {
+        "title": "党建园地 - 廉政文化",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/djgz_13611/"
+        ],
+        "target": "/chinacdc/dqgz/djgz_13611"
+      },
+      {
+        "title": "党建园地 - 工会工作",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/ghgz/"
+        ],
+        "target": "/chinacdc/dqgz/ghgz"
+      },
+      {
+        "title": "党建园地 - 团青工作",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/tqgz/"
+        ],
+        "target": "/chinacdc/dqgz/tqgz"
+      },
+      {
+        "title": "党建园地 - 理论学习",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/tqgz_13618/"
+        ],
+        "target": "/chinacdc/dqgz/tqgz_13618"
+      },
+      {
+        "title": "疾控应急 - 传染病",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkyj/crb2/"
+        ],
+        "target": "/chinacdc/jkyj/crb2"
+      },
+      {
+        "title": "疾控应急 - 突发公共卫生事件",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkyj/tfggws/"
+        ],
+        "target": "/chinacdc/jkyj/tfggws"
+      },
+      {
+        "title": "疾控应急 - 慢性病与伤害防控",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkyj/mxfcrxjb2/"
+        ],
+        "target": "/chinacdc/jkyj/mxfcrxjb2"
+      },
+      {
+        "title": "疾控应急 - 烟草控制",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkyj/yckz/"
+        ],
+        "target": "/chinacdc/jkyj/yckz"
+      },
+      {
+        "title": "疾控应急 - 营养与健康",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkyj/yyyjk2/"
+        ],
+        "target": "/chinacdc/jkyj/yyyjk2"
+      },
+      {
+        "title": "疾控应急 - 环境与健康",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkyj/hjyjk/"
+        ],
+        "target": "/chinacdc/jkyj/hjyjk"
+      },
+      {
+        "title": "疾控应急 - 职业卫生与中毒控制",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkyj/hjwsyzdkz/"
+        ],
+        "target": "/chinacdc/jkyj/hjwsyzdkz"
+      },
+      {
+        "title": "疾控应急 - 放射卫生",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkyj/fsws/"
+        ],
+        "target": "/chinacdc/jkyj/fsws"
+      },
+      {
+        "title": "疾控应急 - 免疫规划",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkyj/mygh02/"
+        ],
+        "target": "/chinacdc/jkyj/mygh02"
+      },
+      {
+        "title": "疾控应急 - 结核病防控",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkyj/jhbfk/"
+        ],
+        "target": "/chinacdc/jkyj/jhbfk"
+      },
+      {
+        "title": "疾控应急 - 寄生虫病",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkyj/jscb/"
+        ],
+        "target": "/chinacdc/jkyj/jscb"
+      },
+      {
+        "title": "科学研究 - 科技进展",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kxyj/kjjz/"
+        ],
+        "target": "/chinacdc/kxyj/kjjz"
+      },
+      {
+        "title": "科学研究 - 学术动态",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kxyj/xsdt/"
+        ],
+        "target": "/chinacdc/kxyj/xsdt"
+      },
+      {
+        "title": "科学研究 - 科研平台",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kxyj/xsjl/"
+        ],
+        "target": "/chinacdc/kxyj/xsjl"
+      },
+      {
+        "title": "科学研究 - 科研亮点",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kxyj/kyld/"
+        ],
+        "target": "/chinacdc/kxyj/kyld"
+      },
+      {
+        "title": "科学研究 - 科技政策",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/kxyj/kjzc/"
+        ],
+        "target": "/chinacdc/kxyj/kjzc"
+      },
+      {
+        "title": "教育培训 - 研究生院",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jypx/yjsy/"
+        ],
+        "target": "/chinacdc/jypx/yjsy"
+      },
+      {
+        "title": "教育培训 - 继续教育",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jypx/jxjy/"
+        ],
+        "target": "/chinacdc/jypx/jxjy"
+      },
+      {
+        "title": "教育培训 - 博士后",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jypx/bsh/"
+        ],
+        "target": "/chinacdc/jypx/bsh"
+      },
+      {
+        "title": "教育培训 - 中国现场流行病学培训项目（CFETP）",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jypx/CFETP/"
+        ],
+        "target": "/chinacdc/jypx/CFETP"
+      },
+      {
+        "title": "全球公卫 - 合作伙伴",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/qqgw/hzhb/"
+        ],
+        "target": "/chinacdc/qqgw/hzhb"
+      },
+      {
+        "title": "全球公卫 - 世界卫生组织合作中心和参比实验室",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/qqgw/wszz/"
+        ],
+        "target": "/chinacdc/qqgw/wszz"
+      },
+      {
+        "title": "全球公卫 - 国际交流 (港澳台交流)",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/qqgw/gjjl/"
+        ],
+        "target": "/chinacdc/qqgw/gjjl"
+      },
+      {
+        "title": "全球公卫 - 公共卫生援外与合作",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/qqgw/ggws/"
+        ],
+        "target": "/chinacdc/qqgw/ggws"
+      },
+      {
+        "title": "人才建设 - 院士风采",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/rcjs/ysfc/"
+        ],
+        "target": "/chinacdc/rcjs/ysfc"
+      },
+      {
+        "title": "人才建设 - 首席专家",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/rcjs/sxzj/"
+        ],
+        "target": "/chinacdc/rcjs/sxzj"
+      },
+      {
+        "title": "人才建设 - 人才队伍",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/rcjs/rcdw/"
+        ],
+        "target": "/chinacdc/rcjs/rcdw"
+      },
+      {
+        "title": "人才建设 - 人才招聘",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/rcjs/rczp/"
+        ],
+        "target": "/chinacdc/rcjs/rczp"
+      },
+      {
+        "title": "健康数据 - 全国法定传染病疫情情况",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jksj/jksj01/"
+        ],
+        "target": "/chinacdc/jksj/jksj01"
+      },
+      {
+        "title": "健康数据 - 全国新型冠状病毒感染疫情情况",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jksj/xgbdyq/"
+        ],
+        "target": "/chinacdc/jksj/xgbdyq"
+      },
+      {
+        "title": "健康数据 - 重点传染病和突发公共卫生事件风险评估报告",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jksj/jksj02/"
+        ],
+        "target": "/chinacdc/jksj/jksj02"
+      },
+      {
+        "title": "健康数据 - 全球传染病事件风险评估报告",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jksj/jksj03/"
+        ],
+        "target": "/chinacdc/jksj/jksj03"
+      },
+      {
+        "title": "健康数据 - 全国预防接种异常反应监测信息概况",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jksj/jksj04_14209/"
+        ],
+        "target": "/chinacdc/jksj/jksj04_14209"
+      },
+      {
+        "title": "健康数据 - 流感监测周报",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jksj/jksj04_14249/"
+        ],
+        "target": "/chinacdc/jksj/jksj04_14249"
+      },
+      {
+        "title": "健康数据 - 全国急性呼吸道传染病哨点监测情况",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jksj/jksj04_14275/"
+        ],
+        "target": "/chinacdc/jksj/jksj04_14275"
+      },
+      {
+        "title": "健康数据 - 健康报告",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jksj/jksj04/"
+        ],
+        "target": "/chinacdc/jksj/jksj04"
+      },
+      {
+        "title": "健康科普 - 传染病",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkkp/crb/"
+        ],
+        "target": "/chinacdc/jkkp/crb"
+      },
+      {
+        "title": "健康科普 - 慢性非传染性疾病",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkkp/mxfcrb/"
+        ],
+        "target": "/chinacdc/jkkp/mxfcrb"
+      },
+      {
+        "title": "健康科普 - 免疫规划",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkkp/mygh/"
+        ],
+        "target": "/chinacdc/jkkp/mygh"
+      },
+      {
+        "title": "健康科普 - 公共卫生事件",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkkp/ggws/"
+        ],
+        "target": "/chinacdc/jkkp/ggws"
+      },
+      {
+        "title": "健康科普 - 烟草控制",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkkp/yckz/"
+        ],
+        "target": "/chinacdc/jkkp/yckz"
+      },
+      {
+        "title": "健康科普 - 营养与健康",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkkp/yyjk/"
+        ],
+        "target": "/chinacdc/jkkp/yyjk"
+      },
+      {
+        "title": "健康科普 - 环境健康",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkkp/hjjk/"
+        ],
+        "target": "/chinacdc/jkkp/hjjk"
+      },
+      {
+        "title": "健康科普 - 职业健康与中毒控制",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkkp/zyjk/"
+        ],
+        "target": "/chinacdc/jkkp/zyjk"
+      },
+      {
+        "title": "健康科普 - 放射卫生",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jkkp/fsws/"
+        ],
+        "target": "/chinacdc/jkkp/fsws"
+      }
+    ]
+  },
   "chinafactcheck.com": {
     "_name": "有据",
     ".": [
@@ -6433,6 +7030,19 @@
           "/blogs/*"
         ],
         "target": "/chlinlearn/chlinlearn/daily-blog"
+      }
+    ]
+  },
+  "chongdiantou.com": {
+    "_name": "充电头网",
+    "www": [
+      {
+        "title": "最新资讯",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/"
+        ],
+        "target": "/chongdiantou/"
       }
     ]
   },
@@ -7188,7 +7798,7 @@
         "source": [
           "/"
         ],
-        "target": "/copernicium/:category"
+        "target": "/copernicium/:category?"
       }
     ]
   },
@@ -7613,6 +8223,19 @@
       }
     ]
   },
+  "cursor.com": {
+    "_name": "Cursor",
+    "www": [
+      {
+        "title": "Changelog",
+        "docs": "https://docs.rsshub.app/routes/program-update",
+        "source": [
+          "/changelog"
+        ],
+        "target": "/cursor/cursor/changelog"
+      }
+    ]
+  },
   "cw.com.tw": {
     "_name": "天下雜誌",
     ".": [
@@ -7806,6 +8429,19 @@
       }
     ]
   },
+  "daoxuan.cc": {
+    "_name": "道宣的窝",
+    ".": [
+      {
+        "title": "推荐阅读文章",
+        "docs": "https://docs.rsshub.app/routes/blog",
+        "source": [
+          "/"
+        ],
+        "target": "/daoxuan/"
+      }
+    ]
+  },
   "darwinawards.com": {
     "_name": "Darwin Awards",
     ".": [
@@ -7822,12 +8458,12 @@
   },
   "dataguidance.com": {
     "_name": "DataGuidance",
-    ".": [
+    "www": [
       {
         "title": "News",
         "docs": "https://docs.rsshub.app/routes/other",
         "source": [
-          "/search/news"
+          "/info"
         ],
         "target": "/dataguidance/news"
       }
@@ -8199,6 +8835,19 @@
       }
     ]
   },
+  "deepseek.com": {
+    "_name": "Deepseek",
+    "api-docs": [
+      {
+        "title": "新闻",
+        "docs": "https://docs.rsshub.app/routes/programming",
+        "source": [
+          "/"
+        ],
+        "target": "/deepseek/news"
+      }
+    ]
+  },
   "dehenglaw.com": {
     "_name": "德恒律师事务所",
     ".": [
@@ -8330,6 +8979,19 @@
           "/"
         ],
         "target": "/digitalcameraworld/news"
+      }
+    ]
+  },
+  "dingshao.cn": {
+    "_name": "盯梢",
+    "www": [
+      {
+        "title": "频道",
+        "docs": "https://docs.rsshub.app/routes/other",
+        "source": [
+          "/share/:shortId"
+        ],
+        "target": "/dingshao/share/:shortId"
       }
     ]
   },
@@ -8788,6 +9450,19 @@
           "/"
         ],
         "target": "/dykszx/news/all"
+      }
+    ]
+  },
+  "ygdy8.net": {
+    "_name": "电影天堂",
+    ".": [
+      {
+        "title": "最新电影",
+        "docs": "https://docs.rsshub.app/routes/multimedia",
+        "source": [
+          "/index.html"
+        ],
+        "target": "/dytt/"
       }
     ]
   },
@@ -9399,11 +10074,11 @@
       }
     ]
   },
-  "fastbull.cn": {
-    "_name": "法布财经",
+  "fastbull.com": {
+    "_name": "FastBull",
     ".": [
       {
-        "title": "快讯",
+        "title": "News Flash",
         "docs": "https://docs.rsshub.app/routes/finance",
         "source": [
           "/express-news",
@@ -9412,22 +10087,13 @@
         "target": "/fastbull/express-news"
       },
       {
-        "title": "新闻",
+        "title": "News",
         "docs": "https://docs.rsshub.app/routes/finance",
         "source": [
-          "/news",
-          "/"
+          "/cn/news",
+          "/cn"
         ],
         "target": "/fastbull/news"
-      },
-      {
-        "title": "新闻",
-        "docs": "https://docs.rsshub.app/routes/finance",
-        "source": [
-          "/news",
-          "/"
-        ],
-        "target": "/fastbull/"
       }
     ]
   },
@@ -9714,6 +10380,19 @@
       }
     ]
   },
+  "foodtalks.cn": {
+    "_name": "FoodTalks全球食品资讯网",
+    "www": [
+      {
+        "title": "FoodTalks global food information network",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/"
+        ],
+        "target": "/foodtalks/"
+      }
+    ]
+  },
   "foresightnews.pro": {
     "_name": "Foresight News",
     ".": [
@@ -9735,7 +10414,7 @@
         "target": "/foresightnews/column/:id"
       },
       {
-        "title": "Unknown",
+        "title": "精选资讯",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
           "/"
@@ -10176,6 +10855,31 @@
       }
     ]
   },
+  "gdufs.edu.cn": {
+    "_name": "广东外语外贸大学",
+    "www": [
+      {
+        "title": "新闻",
+        "docs": "https://docs.rsshub.app/routes/university",
+        "source": [
+          "/gwxw/gwxw1.htm",
+          "/"
+        ],
+        "target": "/gdufs/news"
+      }
+    ],
+    "xwxy": [
+      {
+        "title": "新闻学院-学院新闻",
+        "docs": "https://docs.rsshub.app/routes/university",
+        "source": [
+          "/xwzx/xyxw",
+          "/"
+        ],
+        "target": "/gdufs/xwxy-news"
+      }
+    ]
+  },
   "gdut.edu.cn": {
     "_name": "广东工业大学",
     "oas": [
@@ -10547,7 +11251,7 @@
         "source": [
           "/:user"
         ],
-        "target": "/github/repos/:user"
+        "target": "/github/repos/:user/:type?/:sort?"
       },
       {
         "title": "Repo Stars",
@@ -10592,6 +11296,14 @@
           "/:user/:repo/wiki"
         ],
         "target": "/github/wiki/:user/:repo/:page"
+      },
+      {
+        "title": "Releases",
+        "docs": "https://docs.rsshub.app/routes/program-update",
+        "source": [
+          "/TiddlyWiki/TiddlyWiki5"
+        ],
+        "target": "/tiddlywiki/releases"
       }
     ],
     "gist": [
@@ -13159,7 +13871,7 @@
         "target": "/grist/featured"
       },
       {
-        "title": "Unknown",
+        "title": "Latest Articles",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
           "/articles/"
@@ -13276,7 +13988,7 @@
   },
   "guduodata.com": {
     "_name": "骨朵数据",
-    "data": [
+    ".": [
       {
         "title": "日榜",
         "docs": "https://docs.rsshub.app/routes/other",
@@ -13622,6 +14334,19 @@
           "/"
         ],
         "target": "/hinatazaka46/news"
+      }
+    ]
+  },
+  "hiring.cafe": {
+    "_name": "HiringCafe",
+    ".": [
+      {
+        "title": "Jobs",
+        "docs": "https://docs.rsshub.app/routes/other",
+        "source": [
+          "/"
+        ],
+        "target": "/hiring.cafe/jobs/:keywords"
       }
     ]
   },
@@ -14081,6 +14806,16 @@
         ],
         "target": "/hrbust/jwzx"
       }
+    ],
+    "news": [
+      {
+        "title": "新闻网",
+        "docs": "https://docs.rsshub.app/routes/university",
+        "source": [
+          "/:category.htm"
+        ],
+        "target": "/hrbust/news/:category?"
+      }
     ]
   },
   "huanqiu.com": {
@@ -14274,6 +15009,15 @@
           "/"
         ],
         "target": "/huggingface/blog-zh"
+      },
+      {
+        "title": "英文博客",
+        "docs": "https://docs.rsshub.app/routes/programming",
+        "source": [
+          "/blog",
+          "/"
+        ],
+        "target": "/huggingface/blog"
       },
       {
         "title": "Daily Papers",
@@ -15435,6 +16179,88 @@
       }
     ]
   },
+  "ifanr.com": {
+    "_name": "爱范儿",
+    "www": [
+      {
+        "title": "分类",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/category/:name"
+        ],
+        "target": "/ifanr/category/:name"
+      },
+      {
+        "title": "首页",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/index"
+        ],
+        "target": "/ifanr/index"
+      }
+    ]
+  },
+  "ifun.cool": {
+    "_name": "趣集",
+    "n": [
+      {
+        "title": "盐选故事分类",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/"
+        ],
+        "target": "/ifun/n/category/:id?"
+      },
+      {
+        "title": "全部",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/"
+        ],
+        "target": "/ifun/n/category"
+      },
+      {
+        "title": "通告",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/"
+        ],
+        "target": "/ifun/n/category/1"
+      },
+      {
+        "title": "盐选故事",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/"
+        ],
+        "target": "/ifun/n/category/2"
+      },
+      {
+        "title": "趣集精选",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/"
+        ],
+        "target": "/ifun/n/category/3"
+      },
+      {
+        "title": "盐选故事搜索",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/search-result"
+        ],
+        "target": "/ifun(_,url)=>{const urlObj=new URL(url);const keywords=urlObj.searchParams.get(\"s\");return`/ifun/n/search/${keywords}`}"
+      },
+      {
+        "title": "盐选故事专栏",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/article-list/1"
+        ],
+        "target": "/ifun(_,url)=>{const urlObj=new URL(url);const name=urlObj.searchParams.get(\"tagName\");return`/ifun/n/tag/${name}`}"
+      }
+    ]
+  },
   "iiilab.com": {
     "_name": "人人都是自媒体",
     "www": [
@@ -16196,6 +17022,27 @@
       }
     ]
   },
+  "jimmyspa.com": {
+    "_name": "幾米 JIMMY S.P.A. Official Website",
+    "www": [
+      {
+        "title": "Books",
+        "docs": "https://docs.rsshub.app/routes/design",
+        "source": [
+          "/:language/Books"
+        ],
+        "target": "/jimmyspa/books/:language"
+      },
+      {
+        "title": "News",
+        "docs": "https://docs.rsshub.app/routes/design",
+        "source": [
+          "/:language/News"
+        ],
+        "target": "/jimmyspa/news/:language"
+      }
+    ]
+  },
   "jin10.com": {
     "_name": "金十数据",
     ".": [
@@ -16234,16 +17081,88 @@
   },
   "jisilu.cn": {
     "_name": "集思录",
-    ".": [
+    "www": [
+      {
+        "title": "分类",
+        "docs": "https://docs.rsshub.app/routes/finance",
+        "source": [
+          "/category/:id"
+        ],
+        "target": "/jisilu/category/:id"
+      },
+      {
+        "title": "新股",
+        "docs": "https://docs.rsshub.app/routes/finance",
+        "source": [
+          "/category/3"
+        ],
+        "target": "/jisilu/category/3"
+      },
+      {
+        "title": "债券/可转债",
+        "docs": "https://docs.rsshub.app/routes/finance",
+        "source": [
+          "/category/4"
+        ],
+        "target": "/jisilu/category/4"
+      },
+      {
+        "title": "套利",
+        "docs": "https://docs.rsshub.app/routes/finance",
+        "source": [
+          "/category/5"
+        ],
+        "target": "/jisilu/category/5"
+      },
+      {
+        "title": "其他",
+        "docs": "https://docs.rsshub.app/routes/finance",
+        "source": [
+          "/category/6"
+        ],
+        "target": "/jisilu/category/6"
+      },
+      {
+        "title": "基金",
+        "docs": "https://docs.rsshub.app/routes/finance",
+        "source": [
+          "/category/7"
+        ],
+        "target": "/jisilu/category/7"
+      },
+      {
+        "title": "股票",
+        "docs": "https://docs.rsshub.app/routes/finance",
+        "source": [
+          "/category/8"
+        ],
+        "target": "/jisilu/category/8"
+      },
       {
         "title": "广场",
-        "docs": "https://docs.rsshub.app/routes/bbs",
+        "docs": "https://docs.rsshub.app/routes/finance",
         "source": [
+          "/home/explore/:filter",
           "/home/explore",
-          "/explore",
-          "/"
+          "/explore"
         ],
-        "target": "/jisilu/:category?/:sort?/:day?"
+        "target": "/jisiluparams=>{const filter=params.filter;return`/jisilu/explore${filter?`/${filter}`:\"\"}`}"
+      },
+      {
+        "title": "用户",
+        "docs": "https://docs.rsshub.app/routes/finance",
+        "source": [
+          "/people/:id"
+        ],
+        "target": "/jisilu/people/:id"
+      },
+      {
+        "title": "话题",
+        "docs": "https://docs.rsshub.app/routes/finance",
+        "source": [
+          "/topic/:id"
+        ],
+        "target": "/jisilu/topic/:id"
       }
     ]
   },
@@ -16413,6 +17332,99 @@
           "/news/articleList.html"
         ],
         "target": "/joins/chinese/S1N12"
+      }
+    ]
+  },
+  "joneslanglasalle.com.cn": {
+    "_name": "Jones Lang LaSalle",
+    ".": [
+      {
+        "title": "Trends & Insights",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/:language/:category"
+        ],
+        "target": "/joneslanglasalleparams=>{const language=params.language;const category=params.category;return language?`/${language}${category?`/${category}`:\"\"}`:\"\"}"
+      },
+      {
+        "title": "Latest",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/en/trends-and-insights"
+        ],
+        "target": "/joneslanglasalle/en/trends-and-insights"
+      },
+      {
+        "title": "Workplace",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/en/trends-and-insights/workplace"
+        ],
+        "target": "/joneslanglasalle/en/trends-and-insights/workplace"
+      },
+      {
+        "title": "Investor",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/en/trends-and-insights/investor"
+        ],
+        "target": "/joneslanglasalle/en/trends-and-insights/investor"
+      },
+      {
+        "title": "Cities",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/en/trends-and-insights/cities"
+        ],
+        "target": "/joneslanglasalle/en/trends-and-insights/cities"
+      },
+      {
+        "title": "Research",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/en/trends-and-insights/research"
+        ],
+        "target": "/joneslanglasalle/en/trends-and-insights/research"
+      },
+      {
+        "title": "房地产趋势与洞察",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/zh/trends-and-insights"
+        ],
+        "target": "/joneslanglasalle/zh/trends-and-insights"
+      },
+      {
+        "title": "办公空间",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/zh/trends-and-insights/workplace"
+        ],
+        "target": "/joneslanglasalle/zh/trends-and-insights/workplace"
+      },
+      {
+        "title": "投资者",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/zh/trends-and-insights/investor"
+        ],
+        "target": "/joneslanglasalle/zh/trends-and-insights/investor"
+      },
+      {
+        "title": "城市",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/zh/trends-and-insights/cities"
+        ],
+        "target": "/joneslanglasalle/zh/trends-and-insights/cities"
+      },
+      {
+        "title": "研究报告",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/zh/trends-and-insights/research"
+        ],
+        "target": "/joneslanglasalle/zh/trends-and-insights/research"
       }
     ]
   },
@@ -16745,6 +17757,19 @@
       }
     ]
   },
+  "koreaherald.com": {
+    "_name": "The Korea Herald",
+    "www": [
+      {
+        "title": "News",
+        "docs": "https://docs.rsshub.app/routes/traditional-media",
+        "source": [
+          "/:category"
+        ],
+        "target": "/koreaherald/:category"
+      }
+    ]
+  },
   "kpmg.com": {
     "_name": "KPMG",
     ".": [
@@ -16776,6 +17801,19 @@
           "/"
         ],
         "target": "/kuaidi100/company"
+      }
+    ]
+  },
+  "kuaishou.com": {
+    "_name": "快手",
+    ".": [
+      {
+        "title": "Profile",
+        "docs": "https://docs.rsshub.app/routes/social-media",
+        "source": [
+          "/profile/:principalId"
+        ],
+        "target": "/kuaishou/profile/:principalId"
       }
     ]
   },
@@ -17505,6 +18543,43 @@
           "/"
         ],
         "target": "/luogu/daily"
+      },
+      {
+        "title": "用户文章",
+        "docs": "https://docs.rsshub.app/routes/programming",
+        "source": [
+          "/user/:uid"
+        ],
+        "target": "/luogu/user/article/:uid"
+      },
+      {
+        "title": "用户博客",
+        "docs": "https://docs.rsshub.app/routes/programming",
+        "source": [
+          "/blog/:name"
+        ],
+        "target": "/luogu/user/blog/:name"
+      },
+      {
+        "title": "用户动态",
+        "docs": "https://docs.rsshub.app/routes/programming",
+        "source": [
+          "/user/:uid"
+        ],
+        "target": "/luogu/user/feed/:uid"
+      }
+    ]
+  },
+  "luogu.com": {
+    "_name": "洛谷",
+    ".": [
+      {
+        "title": "用户文章",
+        "docs": "https://docs.rsshub.app/routes/programming",
+        "source": [
+          "/user/:uid"
+        ],
+        "target": "/luogu/user/article/:uid"
       },
       {
         "title": "用户博客",
@@ -20603,6 +21678,19 @@
       }
     ]
   },
+  "moodysmismicrosite.com": {
+    "_name": "穆迪评级",
+    "www": [
+      {
+        "title": "industry",
+        "docs": "https://docs.rsshub.app/routes/finance",
+        "source": [
+          "/report"
+        ],
+        "target": "/moodysmismicrosite/report/:industry?"
+      }
+    ]
+  },
   "mox.moe": {
     "_name": "Mox.moe",
     ".": [
@@ -20630,6 +21718,19 @@
       }
     ]
   },
+  "msn.com": {
+    "_name": "MSN",
+    "www": [
+      {
+        "title": "News",
+        "docs": "https://docs.rsshub.app/routes/traditional-media",
+        "source": [
+          "/:market/channel/source/:name/:id"
+        ],
+        "target": "/msn/:market/:name/:id"
+      }
+    ]
+  },
   "mwm.net.cn": {
     "_name": "管理世界",
     ".": [
@@ -20640,7 +21741,7 @@
           "/web/:category",
           "/"
         ],
-        "target": "/mvm/:category?"
+        "target": "/mwm/:category?"
       }
     ]
   },
@@ -22823,6 +23924,14 @@
           "/arxiv/cs.RO"
         ],
         "target": "/papers/arxiv/cs.RO"
+      },
+      {
+        "title": "arXiv Paper queryed by Keyword",
+        "docs": "https://docs.rsshub.app/routes/journal",
+        "source": [
+          "/arxiv/search?highlight=1&query=*&sort=0"
+        ],
+        "target": "/papers/papers/query/:keyword"
       }
     ]
   },
@@ -22836,6 +23945,99 @@
           "/writing"
         ],
         "target": "/paradigm/writing"
+      }
+    ]
+  },
+  "parliament.uk": {
+    "_name": "UK Parliament",
+    "petition": [
+      {
+        "title": "Petitions",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/petitions"
+        ],
+        "target": "/parliament.uk(_,url)=>{const urlObj=new URL(url);const state=urlObj.searchParams.get(\"state\");return`/parliament.uk/petitions${state?`/${state}`:\"\"}`}"
+      },
+      {
+        "title": "All petitions",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/petitions"
+        ],
+        "target": "/parliament.uk/petitions/all"
+      },
+      {
+        "title": "Open petitions",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/petitions"
+        ],
+        "target": "/parliament.uk/petitions/open"
+      },
+      {
+        "title": "Recent petitions",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/petitions"
+        ],
+        "target": "/parliament.uk/petitions/recent"
+      },
+      {
+        "title": "Closed petitions",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/petitions"
+        ],
+        "target": "/parliament.uk/petitions/closed"
+      },
+      {
+        "title": "Rejected petitions",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/petitions"
+        ],
+        "target": "/parliament.uk/petitions/rejected"
+      },
+      {
+        "title": "Awaiting government response",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/petitions"
+        ],
+        "target": "/parliament.uk/petitions/awaiting_response"
+      },
+      {
+        "title": "Government responses",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/petitions"
+        ],
+        "target": "/parliament.uk/petitions/with_response"
+      },
+      {
+        "title": "Awaiting a debate in Parliament",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/petitions"
+        ],
+        "target": "/parliament.uk/petitions/awaiting_debate"
+      },
+      {
+        "title": "Debated in Parliament",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/petitions"
+        ],
+        "target": "/parliament.uk/petitions/debated"
+      },
+      {
+        "title": "Not debated in Parliament",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/petitions"
+        ],
+        "target": "/parliament.uk/petitions/not_debated"
       }
     ]
   },
@@ -22999,7 +24201,7 @@
       }
     ]
   },
-  "picnob.com": {
+  "piokok.com": {
     "_name": "Instagram",
     ".": [
       {
@@ -23079,6 +24281,20 @@
           "/"
         ],
         "target": "/pingwest/user/:uid/:type"
+      }
+    ]
+  },
+  "pinterest.com": {
+    "_name": "Pinterest",
+    "www": [
+      {
+        "title": "User",
+        "docs": "https://docs.rsshub.app/routes/picture",
+        "source": [
+          "/:id/:type",
+          "/:id"
+        ],
+        "target": "/pinterest/user/:id/:type?"
       }
     ]
   },
@@ -25552,30 +26768,50 @@
   },
   "shu.edu.cn": {
     "_name": "上海大学",
+    "global": [
+      {
+        "title": "国际部港澳台办公室",
+        "docs": "https://docs.rsshub.app/routes/university",
+        "source": [
+          "/"
+        ],
+        "target": "/shu/global"
+      }
+    ],
+    "gs": [
+      {
+        "title": "研究生院",
+        "docs": "https://docs.rsshub.app/routes/university",
+        "source": [
+          "/"
+        ],
+        "target": "/shu/gs"
+      }
+    ],
     "www": [
       {
-        "title": "官网信息",
+        "title": "官网通知公告",
         "docs": "https://docs.rsshub.app/routes/university",
         "source": [
-          "/:type"
+          "/"
         ],
-        "target": "/shu/:type"
+        "target": "/shu/news"
       },
       {
-        "title": "Unknown",
+        "title": "教务部",
         "docs": "https://docs.rsshub.app/routes/university",
         "source": [
-          "/:type"
+          "/index"
         ],
-        "target": "/shu/:type"
+        "target": "/shu/:type?"
       },
       {
-        "title": "Unknown",
+        "title": "校园看点",
         "docs": "https://docs.rsshub.app/routes/university",
         "source": [
-          "/:type"
+          "/"
         ],
-        "target": "/shu/:type"
+        "target": "/shu/xykd"
       }
     ]
   },
@@ -26150,6 +27386,19 @@
       }
     ]
   },
+  "spglobal.com": {
+    "_name": "S&P Global",
+    "www": [
+      {
+        "title": "Ratings",
+        "docs": "https://docs.rsshub.app/routes/finance",
+        "source": [
+          "/ratings/:language"
+        ],
+        "target": "/spglobal/ratings/:language?"
+      }
+    ]
+  },
   "spotify.com": {
     "_name": "Spotify",
     "open": [
@@ -26186,7 +27435,7 @@
         "target": "/spotify/saved"
       },
       {
-        "title": "Show",
+        "title": "Show/Podcasts",
         "docs": "https://docs.rsshub.app/routes/multimedia",
         "source": [
           "/show/:id"
@@ -27956,6 +29205,19 @@
       }
     ]
   },
+  "taiwanmobile.com": {
+    "_name": "台灣大哥大",
+    ".": [
+      {
+        "title": "資費公告",
+        "docs": "https://docs.rsshub.app/routes/other",
+        "source": [
+          "/cs/public/servAnn/queryList.htm"
+        ],
+        "target": "/taiwanmobile/rate-plans"
+      }
+    ]
+  },
   "taiwannews.com.tw": {
     "_name": "Taiwan News",
     ".": [
@@ -28006,43 +29268,28 @@
       }
     ]
   },
-  "taptap.com": {
-    "_name": "TapTap 中国",
+  "taptap.cn": {
+    "_name": "TapTap",
+    "www": [
+      {
+        "title": "游戏更新",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/app/:id"
+        ],
+        "target": "/taptap/changelog/:id"
+      },
+      {
+        "title": "游戏评价",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/app/:id/review",
+          "/app/:id"
+        ],
+        "target": "/taptap/review/:id"
+      }
+    ],
     ".": [
-      {
-        "title": "游戏更新",
-        "docs": "https://docs.rsshub.app/routes/game",
-        "source": [
-          "/app/:id"
-        ],
-        "target": "/taptap/changelog/:id"
-      },
-      {
-        "title": "游戏更新",
-        "docs": "https://docs.rsshub.app/routes/game",
-        "source": [
-          "/app/:id"
-        ],
-        "target": "/taptap/changelog/:id"
-      },
-      {
-        "title": "游戏评价",
-        "docs": "https://docs.rsshub.app/routes/game",
-        "source": [
-          "/app/:id/review",
-          "/app/:id"
-        ],
-        "target": "/taptap/review/:id"
-      },
-      {
-        "title": "游戏评价",
-        "docs": "https://docs.rsshub.app/routes/game",
-        "source": [
-          "/app/:id/review",
-          "/app/:id"
-        ],
-        "target": "/taptap/review/:id"
-      },
       {
         "title": "游戏论坛",
         "docs": "https://docs.rsshub.app/routes/game",
@@ -28051,6 +29298,28 @@
           "/app/:id"
         ],
         "target": "/taptap/topic/:id"
+      }
+    ]
+  },
+  "taptap.io": {
+    "_name": "TapTap",
+    "www": [
+      {
+        "title": "Game's Changelog",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/app/:id"
+        ],
+        "target": "/taptap/intl/changelog/:id"
+      },
+      {
+        "title": "Ratings & Reviews",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/app/:id/review",
+          "/app/:id"
+        ],
+        "target": "/taptap/intl/review/:id"
       }
     ]
   },
@@ -28421,7 +29690,7 @@
         "target": "/thepaper/featured"
       },
       {
-        "title": "Unknown",
+        "title": "侧边栏",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
           "/"
@@ -28429,7 +29698,7 @@
         "target": "/thepaper/sidebar"
       },
       {
-        "title": "Unknown",
+        "title": "澎湃美数课作品集 - 分类",
         "docs": "https://docs.rsshub.app/routes/new-media",
         "source": [
           "/"
@@ -28534,6 +29803,19 @@
           "/%E6%97%A5%E7%A8%8B%E8%A1%A8"
         ],
         "target": "/thwiki/calendar"
+      }
+    ]
+  },
+  "tiddlywiki.com": {
+    "_name": "TiddlyWiki",
+    ".": [
+      {
+        "title": "Releases",
+        "docs": "https://docs.rsshub.app/routes/program-update",
+        "source": [
+          "/"
+        ],
+        "target": "/tiddlywiki/releases"
       }
     ]
   },
@@ -29931,6 +31213,19 @@
       }
     ]
   },
+  "webcatalog.io": {
+    "_name": "WebCatalog",
+    "desktop": [
+      {
+        "title": "Changelog",
+        "docs": "https://docs.rsshub.app/routes/program-update",
+        "source": [
+          "/:lang/changelog"
+        ],
+        "target": "/webcatalog/changelog"
+      }
+    ]
+  },
   "cimidata.com": {
     "_name": "微信小程序",
     ".": [
@@ -30163,6 +31458,16 @@
           "/index.htm"
         ],
         "target": "/whu/rsgis/index"
+      }
+    ],
+    "swrh": [
+      {
+        "title": "水利水电学院公告",
+        "docs": "https://docs.rsshub.app/routes/university",
+        "source": [
+          "/:type"
+        ],
+        "target": "/whu/swrh/:type"
       }
     ],
     "gs": [
@@ -31000,7 +32305,8 @@
         "title": "Channel with username",
         "docs": "https://docs.rsshub.app/routes/social-media",
         "source": [
-          "/user/:username"
+          "/user/:username",
+          "/:username"
         ],
         "target": "/youtube/user/:username"
       }
@@ -31101,14 +32407,22 @@
   },
   "myzaker.com": {
     "_name": "ZAKER",
-    ".": [
+    "www": [
       {
-        "title": "Unknown",
+        "title": "分类",
         "docs": "https://docs.rsshub.app/routes/other",
         "source": [
-          "/:type/:id"
+          "/channel/:id"
         ],
-        "target": "/zaker/:type/:id"
+        "target": "/zaker/channel/:id"
+      },
+      {
+        "title": "精读",
+        "docs": "https://docs.rsshub.app/routes/other",
+        "source": [
+          "/"
+        ],
+        "target": "/zaker/focusread"
       }
     ]
   },
