@@ -3233,6 +3233,19 @@
       }
     ]
   },
+  "acgvinyl.com": {
+    "_name": "ACG Vinyl - 黑胶",
+    "www": [
+      {
+        "title": "News",
+        "docs": "https://docs.rsshub.app/routes/anime",
+        "source": [
+          "/"
+        ],
+        "target": "/acgvinyl/news"
+      }
+    ]
+  },
   "acs.org": {
     "_name": "ACS Publications",
     "pubs": [
@@ -5548,6 +5561,7 @@
         "title": "播客",
         "docs": "https://docs.rsshub.app/routes/multimedia",
         "source": [
+          "/:region/podcast/:showName/:id",
           "/:region/podcast/:id"
         ],
         "target": "/apple/podcast/:id/:region?"
@@ -11695,6 +11709,19 @@
       }
     ]
   },
+  "coolbuy.com": {
+    "_name": "玩物志",
+    ".": [
+      {
+        "title": "产品",
+        "docs": "https://docs.rsshub.app/routes/shopping",
+        "source": [
+          "/"
+        ],
+        "target": "/coolbuy/"
+      }
+    ]
+  },
   "coolpc.com.tw": {
     "_name": "原價屋",
     "www": [
@@ -17609,6 +17636,14 @@
           "/gk/sgcc/:category"
         ],
         "target": "/gov/mem/gk/sgcc/:category"
+      },
+      {
+        "title": "法定主动公开内容",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/gk/zfxxgkpt/fdzdgknr"
+        ],
+        "target": "/gov/mem/gk/zfxxgkpt/fdzdgknr"
       }
     ]
   },
@@ -17794,6 +17829,43 @@
           "/pub/sfbgw/lfyjzj/lflfyjzj/*"
         ],
         "target": "/gov/moj/lfyjzj"
+      }
+    ]
+  },
+  "mot.gov.cn": {
+    "_name": "深圳市罗湖区人民政府",
+    "www": [
+      {
+        "title": "中华人民共和国交通运输部",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/:category"
+        ],
+        "target": "/govparams=>{const category=params.category;return`/mot${category?`/${category}`:\"\"}`}"
+      },
+      {
+        "title": "交通要闻",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/jiaotongyaowen/"
+        ],
+        "target": "/gov/mot/jiaotongyaowen"
+      },
+      {
+        "title": "时政要闻",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/shizhengyaowen/"
+        ],
+        "target": "/gov/mot/shizhengyaowen"
+      },
+      {
+        "title": "重要会议",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/zhongyaohuiyi/"
+        ],
+        "target": "/gov/mot/zhongyaohuiyi"
       }
     ]
   },
@@ -20640,7 +20712,7 @@
         "target": "/hupu/:category"
       },
       {
-        "title": "Unknown",
+        "title": "手机虎扑网",
         "docs": "https://docs.rsshub.app/routes/bbs",
         "source": [
           "/:category",
@@ -20649,7 +20721,7 @@
         "target": "/hupu/:category"
       },
       {
-        "title": "Unknown",
+        "title": "手机虎扑网",
         "docs": "https://docs.rsshub.app/routes/bbs",
         "source": [
           "/:category",
@@ -22596,6 +22668,179 @@
       }
     ]
   },
+  "jbma.net": {
+    "_name": "Japan Bullion Market Association",
+    ".": [
+      {
+        "title": "Precious Metals Report",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/:type/:name"
+        ],
+        "target": "/jbmaparams=>{const type=params.type;const name=params.name;if(type===\"report\"||type===\"cat_report\"||type===\"tag_report\"){return`/${type}${name?`/${name}`:\"\"}`}return`/${type}`}"
+      },
+      {
+        "title": "Metals Forcus",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/cat_report/metals-forcus"
+        ],
+        "target": "/jbma/report/cat_report/metals-forcus"
+      },
+      {
+        "title": "WPIC",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/cat_report/wpic"
+        ],
+        "target": "/jbma/report/cat_report/wpic"
+      },
+      {
+        "title": "Incrementum",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/cat_report/incrementum"
+        ],
+        "target": "/jbma/report/cat_report/incrementum"
+      },
+      {
+        "title": "東京金融取引所",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/cat_report/tfx"
+        ],
+        "target": "/jbma/report/cat_report/tfx"
+      },
+      {
+        "title": "池水執筆・出演",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/cat_report/ikemizu"
+        ],
+        "target": "/jbma/report/cat_report/ikemizu"
+      },
+      {
+        "title": "note",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/cat_report/note"
+        ],
+        "target": "/jbma/report/cat_report/note"
+      },
+      {
+        "title": "その他",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/cat_report/other"
+        ],
+        "target": "/jbma/report/cat_report/other"
+      },
+      {
+        "title": "In Gold We Trust",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/tag_report/in-gold-we-trust"
+        ],
+        "target": "/jbma/report/tag_report/in-gold-we-trust"
+      },
+      {
+        "title": "Precious Metals Weeklyレポート",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/tag_report/precious-metals-weekly-report"
+        ],
+        "target": "/jbma/report/tag_report/precious-metals-weekly-report"
+      },
+      {
+        "title": "ひろこのマーケットラウンジ",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/tag_report/market-lounge"
+        ],
+        "target": "/jbma/report/tag_report/market-lounge"
+      },
+      {
+        "title": "その他",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/tag_report/other"
+        ],
+        "target": "/jbma/report/tag_report/other"
+      },
+      {
+        "title": "四半期レポート",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/tag_report/quarterly-report"
+        ],
+        "target": "/jbma/report/tag_report/quarterly-report"
+      },
+      {
+        "title": "プラチナ展望",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/tag_report/tenbo"
+        ],
+        "target": "/jbma/report/tag_report/tenbo"
+      },
+      {
+        "title": "Gold Compass",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/tag_report/gold-compass"
+        ],
+        "target": "/jbma/report/tag_report/gold-compass"
+      },
+      {
+        "title": "豆知識",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/tag_report/mamechishiki"
+        ],
+        "target": "/jbma/report/tag_report/mamechishiki"
+      },
+      {
+        "title": "プラチナ投資のエッセンス",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/tag_report/essence"
+        ],
+        "target": "/jbma/report/tag_report/essence"
+      },
+      {
+        "title": "三菱UFJ信託銀行",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/tag_report/mufg"
+        ],
+        "target": "/jbma/report/tag_report/mufg"
+      },
+      {
+        "title": "石福金属興業",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/tag_report/ishifuku"
+        ],
+        "target": "/jbma/report/tag_report/ishifuku"
+      },
+      {
+        "title": "OANDA 証券",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/tag_report/oanda"
+        ],
+        "target": "/jbma/report/tag_report/oanda"
+      },
+      {
+        "title": "レポート",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/tag_report/report"
+        ],
+        "target": "/jbma/report/tag_report/report"
+      }
+    ]
+  },
   "jetbrains.com": {
     "_name": "JetBrains",
     "youtrack": [
@@ -23199,6 +23444,14 @@
     "_name": "掘金",
     ".": [
       {
+        "title": "AI 编程",
+        "docs": "https://docs.rsshub.app/routes/programming",
+        "source": [
+          "/books"
+        ],
+        "target": "/juejin/aicoding/:tag?/:sort?"
+      },
+      {
         "title": "小册",
         "docs": "https://docs.rsshub.app/routes/programming",
         "source": [
@@ -23587,6 +23840,147 @@
           "/kitty/changelog/"
         ],
         "target": "/kovidgoyal/kitty/changelog"
+      }
+    ]
+  },
+  "koyso.to": {
+    "_name": "Koyso",
+    ".": [
+      {
+        "title": "游戏",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/"
+        ],
+        "target": "/koyso(_,url)=>{const urlObj=new URL(url);const category=urlObj.searchParams.get(\"category\")??void 0;const sort=urlObj.searchParams.get(\"sort\")??void 0;return`/koyso${category?`/${category}`:\"0\"}${sort?`/${sort}`:\"\"}`}"
+      },
+      {
+        "title": "全部游戏",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/"
+        ],
+        "target": "/koyso/0"
+      },
+      {
+        "title": "动作游戏",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/"
+        ],
+        "target": "/koyso/3"
+      },
+      {
+        "title": "冒险游戏",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/"
+        ],
+        "target": "/koyso/5"
+      },
+      {
+        "title": "绅士游戏",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/"
+        ],
+        "target": "/koyso/7"
+      },
+      {
+        "title": "射击游戏",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/"
+        ],
+        "target": "/koyso/1"
+      },
+      {
+        "title": "休闲游戏",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/"
+        ],
+        "target": "/koyso/2"
+      },
+      {
+        "title": "体育竞速",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/"
+        ],
+        "target": "/koyso/4"
+      },
+      {
+        "title": "模拟经营",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/"
+        ],
+        "target": "/koyso/6"
+      },
+      {
+        "title": "角色扮演",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/"
+        ],
+        "target": "/koyso/8"
+      },
+      {
+        "title": "策略游戏",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/"
+        ],
+        "target": "/koyso/9"
+      },
+      {
+        "title": "格斗游戏",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/"
+        ],
+        "target": "/koyso/10"
+      },
+      {
+        "title": "恐怖游戏",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/"
+        ],
+        "target": "/koyso/11"
+      },
+      {
+        "title": "即时战略",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/"
+        ],
+        "target": "/koyso/12"
+      },
+      {
+        "title": "卡牌游戏",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/"
+        ],
+        "target": "/koyso/13"
+      },
+      {
+        "title": "独立游戏",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/"
+        ],
+        "target": "/koyso/14"
+      },
+      {
+        "title": "局域网联机",
+        "docs": "https://docs.rsshub.app/routes/game",
+        "source": [
+          "/"
+        ],
+        "target": "/koyso/15"
       }
     ]
   },
@@ -28223,6 +28617,17 @@
   },
   "nankai.edu.cn": {
     "_name": "南开大学",
+    "ai": [
+      {
+        "title": "人工智能学院",
+        "docs": "https://docs.rsshub.app/routes/university",
+        "source": [
+          "/",
+          "/xwzx/:type.htm"
+        ],
+        "target": "/nankai/ai/:type?"
+      }
+    ],
     "cc": [
       {
         "title": "计算机学院",
@@ -28232,6 +28637,17 @@
           "/:type/list.htm"
         ],
         "target": "/nankai/cc/:type?"
+      }
+    ],
+    "graduate": [
+      {
+        "title": "研究生院",
+        "docs": "https://docs.rsshub.app/routes/university",
+        "source": [
+          "/",
+          "/:type/list.htm"
+        ],
+        "target": "/nankai/graduate/:type?"
       }
     ],
     "jwc": [
@@ -29302,6 +29718,14 @@
   "nicovideo.jp": {
     "_name": "Niconico",
     "www": [
+      {
+        "title": "Mylist",
+        "docs": "https://docs.rsshub.app/routes/multimedia",
+        "source": [
+          "/user/:user/mylist/:id"
+        ],
+        "target": "/nicovideo/mylist/:id"
+      },
       {
         "title": "User Videos",
         "docs": "https://docs.rsshub.app/routes/multimedia",
@@ -34029,8 +34453,88 @@
     ]
   },
   "samrdprc.org.cn": {
-    "_name": "国家市场监督管理总局",
+    "_name": "国家市场监督管理总局缺陷产品管理中心",
     "www": [
+      {
+        "title": "栏目",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/:id"
+        ],
+        "target": "/samrdprc/:id"
+      },
+      {
+        "title": "网站首页 - 新闻动态",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/xwdt/gzdt/"
+        ],
+        "target": "/samrdprc/xwdt/gzdt"
+      },
+      {
+        "title": "网站首页 - 网站公告",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/wzgg/"
+        ],
+        "target": "/samrdprc/wzgg"
+      },
+      {
+        "title": "网站首页 - 汽车召回",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/qczh/"
+        ],
+        "target": "/samrdprc/qczh"
+      },
+      {
+        "title": "网站首页 - 消费品召回",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/xfpzh/"
+        ],
+        "target": "/samrdprc/xfpzh"
+      },
+      {
+        "title": "科学研究 - 技术报告",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/yjgz/jsyj/"
+        ],
+        "target": "/samrdprc/yjgz/jsyj"
+      },
+      {
+        "title": "科学研究 - SAC/TC463",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/yjgz/sactc/"
+        ],
+        "target": "/samrdprc/yjgz/sactc"
+      },
+      {
+        "title": "科学研究 - 研究动态",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/yjgz/yjfx/"
+        ],
+        "target": "/samrdprc/yjgz/yjfx"
+      },
+      {
+        "title": "安全教育 - 安全教育",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/aqjy/"
+        ],
+        "target": "/samrdprc/aqjy"
+      },
+      {
+        "title": "法律法规 - 国内法规",
+        "docs": "https://docs.rsshub.app/routes/government",
+        "source": [
+          "/flfg/gnfg/"
+        ],
+        "target": "/samrdprc/flfg/gnfg"
+      },
       {
         "title": "召回信息",
         "docs": "https://docs.rsshub.app/routes/government",
@@ -39761,8 +40265,7 @@
         "title": "Engineering",
         "docs": "https://docs.rsshub.app/routes/blog",
         "source": [
-          "/:language/blog/engineering",
-          "/:language/blog"
+          "/:language/blog/engineering"
         ],
         "target": "/uber/blog"
       }
@@ -41689,19 +42192,6 @@
           "/"
         ],
         "target": "/xidian/gr/:category?"
-      }
-    ]
-  },
-  "xinhuanet.com": {
-    "_name": "新华网",
-    "app": [
-      {
-        "title": "客户端",
-        "docs": "https://docs.rsshub.app/routes/traditional-media",
-        "source": [
-          "/"
-        ],
-        "target": "/xinhuanet/app"
       }
     ]
   },
