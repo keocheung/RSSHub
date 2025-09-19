@@ -3438,6 +3438,17 @@
         ],
         "target": "/njuferret/blog"
       }
+    ],
+    "qwenlm": [
+      {
+        "title": "Blog",
+        "docs": "https://docs.rsshub.app/routes/blog",
+        "source": [
+          "/blog/",
+          "/:lang/blog/"
+        ],
+        "target": "/qwenlm/qwenlm/blog/:lang"
+      }
     ]
   },
   "agri.cn": {
@@ -24367,6 +24378,19 @@
           "/u/:handle"
         ],
         "target": "/lens/profile/:handle"
+      }
+    ]
+  },
+  "letterboxd.com": {
+    "_name": "Letterboxd",
+    ".": [
+      {
+        "title": "User Watchlist",
+        "docs": "https://docs.rsshub.app/routes/social-media",
+        "source": [
+          "/:username/watchlist/"
+        ],
+        "target": "/letterboxd/:username/watchlist"
       }
     ]
   },
